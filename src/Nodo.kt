@@ -1,0 +1,1 @@
+class Nodo(var value:Int,var hijoIzq:Nodo?=null,var hijoDer:Nodo?=null){}
