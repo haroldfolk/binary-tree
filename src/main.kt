@@ -8,6 +8,7 @@ fun main(args:Array<String>){
     miArbol.addNodo(Nodo(5))
     miArbol.addNodo(Nodo(9))
     miArbol.addNodo(Nodo(20))
-    print(miArbol.recPreorden())
-
+    println(miArbol.recPreorden())
+    println(miArbol.recInorden())
+    println(miArbol.recPostorden())
 }

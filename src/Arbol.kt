@@ -38,4 +38,36 @@ class Arbol(var raiz: Nodo? = null) {
 
         return recPreorden(list, this.raiz!!)
     }
+
+
+    private fun recInorden(list: MutableList<Int>, nodoRaiz: Nodo?): MutableList<Int> {
+        if (nodoRaiz != null) {
+            recInorden(list, nodoRaiz.hijoIzq)
+            list.add(nodoRaiz.value)
+            recInorden(list, nodoRaiz.hijoDer)
+        }
+        return list
+    }
+
+    fun recInorden(): MutableList<Int> {
+        var list: MutableList<Int> = mutableListOf()
+
+        return recInorden(list, this.raiz!!)
+    }
+
+    private fun recPostorden(list: MutableList<Int>, nodoRaiz: Nodo?): MutableList<Int> {
+        if (nodoRaiz != null) {
+            recPostorden(list, nodoRaiz.hijoIzq)
+            recPostorden(list, nodoRaiz.hijoDer)
+            list.add(nodoRaiz.value)
+
+        }
+        return list
+    }
+
+    fun recPostorden(): MutableList<Int> {
+        var list: MutableList<Int> = mutableListOf()
+
+        return recPostorden(list, this.raiz!!)
+    }
 }
